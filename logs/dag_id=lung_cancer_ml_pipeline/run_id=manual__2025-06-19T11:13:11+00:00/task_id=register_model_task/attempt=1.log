@@ -1,0 +1,47 @@
+[2025-06-19T11:18:41.477+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: lung_cancer_ml_pipeline.register_model_task manual__2025-06-19T11:13:11+00:00 [queued]>
+[2025-06-19T11:18:41.484+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: lung_cancer_ml_pipeline.register_model_task manual__2025-06-19T11:13:11+00:00 [queued]>
+[2025-06-19T11:18:41.485+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 2
+[2025-06-19T11:18:41.531+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): register_model_task> on 2025-06-19 11:13:11+00:00
+[2025-06-19T11:18:41.539+0000] {standard_task_runner.py:60} INFO - Started process 725 to run task
+[2025-06-19T11:18:41.542+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'lung_cancer_ml_pipeline', 'register_model_task', 'manual__2025-06-19T11:13:11+00:00', '--job-id', '82', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmp3su4wtna']
+[2025-06-19T11:18:41.544+0000] {standard_task_runner.py:88} INFO - Job 82: Subtask register_model_task
+[2025-06-19T11:18:41.667+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:194: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2025-06-19T11:18:41.697+0000] {task_command.py:423} INFO - Running <TaskInstance: lung_cancer_ml_pipeline.register_model_task manual__2025-06-19T11:13:11+00:00 [running]> on host 0064cba90111
+[2025-06-19T11:18:41.796+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='lung_cancer_ml_pipeline' AIRFLOW_CTX_TASK_ID='register_model_task' AIRFLOW_CTX_EXECUTION_DATE='2025-06-19T11:13:11+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-19T11:13:11+00:00'
+[2025-06-19T11:18:41.797+0000] {logging_mixin.py:188} INFO - Starting model registration task...
+[2025-06-19T11:18:41.812+0000] {logging_mixin.py:188} INFO - Artifact location: /opt/***/mlflow_artifacts
+[2025-06-19T11:18:41.813+0000] {logging_mixin.py:188} INFO - Artifact location exists: True
+[2025-06-19T11:18:41.813+0000] {logging_mixin.py:188} INFO - Artifact location permissions: 777
+[2025-06-19T11:18:41.838+0000] {logging_mixin.py:188} INFO - Using existing experiment 'lung_cancer_mortality_prediction' with ID: 1
+[2025-06-19T11:18:41.865+0000] {logging_mixin.py:188} INFO - No versions found for model 'lung_cancer_model'
+[2025-06-19T11:18:41.865+0000] {logging_mixin.py:188} INFO - No model found in MLflow registry. Using the trained model.
+[2025-06-19T11:18:41.946+0000] {logging_mixin.py:188} WARNING - 2025/06/19 11:18:41 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+The git executable must be specified in one of the following ways:
+    - be included in your $PATH
+    - be set via $GIT_PYTHON_GIT_EXECUTABLE
+    - explicitly set via git.refresh(<full-path-to-git-executable>)
+
+All git commands will error until this is rectified.
+
+This initial message can be silenced or aggravated in the future by setting the
+$GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+    - quiet|q|silence|s|silent|none|n|0: for no message or exception
+    - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+    - error|e|exception|raise|r|2: for a raised exception
+
+Example:
+    export GIT_PYTHON_REFRESH=quiet
+[2025-06-19T11:18:41.970+0000] {logging_mixin.py:188} INFO - Started MLflow run: registration_run
+[2025-06-19T11:18:41.971+0000] {logging_mixin.py:188} INFO - Run ID: bcd5b7df3c6f4ebbadd270468fa2293d
+[2025-06-19T11:18:41.983+0000] {logging_mixin.py:188} INFO - Run artifact URI: /mlflow/artifacts/1/bcd5b7df3c6f4ebbadd270468fa2293d/artifacts
+[2025-06-19T11:18:42.034+0000] {logging_mixin.py:188} INFO - Model saved locally to: /opt/***/models/model_20250619_111841.joblib
+[2025-06-19T11:18:43.906+0000] {logging_mixin.py:188} WARNING - 2025/06/19 11:18:43 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.
+[2025-06-19T11:18:43.923+0000] {logging_mixin.py:188} INFO - Failed to log model directly to MLflow: [Errno 13] Permission denied: '/mlflow'
+[2025-06-19T11:18:43.924+0000] {logging_mixin.py:188} INFO - Failed to log model as artifact: [Errno 13] Permission denied: '/mlflow'
+[2025-06-19T11:18:43.925+0000] {logging_mixin.py:188} INFO - MLflow is not available. Skipping end_run.
+[2025-06-19T11:18:43.926+0000] {python.py:202} INFO - Done. Returned value was: Model registration completed
+[2025-06-19T11:18:43.960+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=lung_cancer_ml_pipeline, task_id=register_model_task, execution_date=20250619T111311, start_date=20250619T111841, end_date=20250619T111843
+[2025-06-19T11:18:44.016+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-06-19T11:18:44.031+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check

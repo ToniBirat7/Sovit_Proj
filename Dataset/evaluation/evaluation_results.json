@@ -1,0 +1,28 @@
+{
+  "mean_squared_error": 0.029667693490425126,
+  "root_mean_squared_error": 0.1722431232021329,
+  "mean_absolute_error": 0.054718342728148454,
+  "r2_score": 0.9991202174158625,
+  "feature_importances": {
+    "id_to_age_ratio": 0.9954993934326906,
+    "poly_id age": 0.0019647942328658045,
+    "poly_id hypertension": 0.0011676240029673403,
+    "min_numeric": 0.00030107466275019367,
+    "age": 0.000193059967508171,
+    "cholesterol_level": 0.00018128587911132242,
+    "poly_id cholesterol_level": 0.00013658129018747064,
+    "poly_cholesterol_level hypertension": 0.00010920240164236195,
+    "poly_age hypertension": 0.00010225800392714708,
+    "poly_bmi cholesterol_level": 8.517942320948614e-05,
+    "mean_numeric": 5.829957972241438e-05,
+    "sum_numeric": 4.7578706448926936e-05,
+    "bmi": 4.695660329276129e-05,
+    "poly_bmi hypertension": 4.270986171198193e-05,
+    "poly_age cholesterol_level": 4.25531596941781e-05,
+    "cancer_stage_Stage II": 1.3508839277100642e-05,
+    "asthma": 4.492375879554471e-06,
+    "cancer_stage_Stage III": 1.9429102732685704e-06,
+    "hypertension": 7.759443743852806e-07,
+    "hypertension_log": 7.28722465661566e-07
+  }
+}
