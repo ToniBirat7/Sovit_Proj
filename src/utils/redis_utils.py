@@ -70,8 +70,11 @@ class RedisClient:
                 print(f"No data found for key '{key}'")
                 return None
             
+            # Convert bytes to string before using read_json
+            json_str = json_data.decode('utf-8')
+            
             # Convert JSON to DataFrame
-            df = pd.read_json(json_data, orient='records')
+            df = pd.read_json(json_str, orient='records')
             print(f"Retrieved DataFrame with shape {df.shape} from key '{key}'")
             return df
         except Exception as e:
@@ -115,8 +118,11 @@ class RedisClient:
                 print(f"No data found for key '{key}'")
                 return None
             
+            # Convert bytes to string before using json.loads
+            json_str = json_data.decode('utf-8')
+            
             # Convert JSON to dict
-            data = json.loads(json_data)
+            data = json.loads(json_str)
             print(f"Retrieved dictionary from key '{key}'")
             return data
         except Exception as e:

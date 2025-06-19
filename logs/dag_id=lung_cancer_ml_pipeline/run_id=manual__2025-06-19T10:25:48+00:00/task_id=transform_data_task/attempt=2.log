@@ -1,0 +1,45 @@
+[2025-06-19T10:30:58.899+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: lung_cancer_ml_pipeline.transform_data_task manual__2025-06-19T10:25:48+00:00 [queued]>
+[2025-06-19T10:30:58.906+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: lung_cancer_ml_pipeline.transform_data_task manual__2025-06-19T10:25:48+00:00 [queued]>
+[2025-06-19T10:30:58.907+0000] {taskinstance.py:2193} INFO - Starting attempt 2 of 2
+[2025-06-19T10:30:58.930+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): transform_data_task> on 2025-06-19 10:25:48+00:00
+[2025-06-19T10:30:58.937+0000] {standard_task_runner.py:60} INFO - Started process 341 to run task
+[2025-06-19T10:30:58.940+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'lung_cancer_ml_pipeline', 'transform_data_task', 'manual__2025-06-19T10:25:48+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmpur9suc8a']
+[2025-06-19T10:30:58.942+0000] {standard_task_runner.py:88} INFO - Job 17: Subtask transform_data_task
+[2025-06-19T10:30:58.981+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:194: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2025-06-19T10:30:59.008+0000] {task_command.py:423} INFO - Running <TaskInstance: lung_cancer_ml_pipeline.transform_data_task manual__2025-06-19T10:25:48+00:00 [running]> on host 50ee7aa98663
+[2025-06-19T10:30:59.098+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='lung_cancer_ml_pipeline' AIRFLOW_CTX_TASK_ID='transform_data_task' AIRFLOW_CTX_EXECUTION_DATE='2025-06-19T10:25:48+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-19T10:25:48+00:00'
+[2025-06-19T10:30:59.099+0000] {logging_mixin.py:188} INFO - Starting data transformation task...
+[2025-06-19T10:30:59.122+0000] {logging_mixin.py:188} INFO - Retrieved DataFrame with shape (1000, 18) from key 'lung_cancer:raw_data'
+[2025-06-19T10:30:59.123+0000] {logging_mixin.py:188} INFO - Starting data transformation process...
+[2025-06-19T10:30:59.128+0000] {logging_mixin.py:188} INFO - Numeric features: ['id', 'age', 'bmi', 'cholesterol_level', 'hypertension', 'asthma', 'cirrhosis', 'other_cancer', 'survived']
+[2025-06-19T10:30:59.128+0000] {logging_mixin.py:188} INFO - Categorical features: ['gender', 'country', 'diagnosis_date', 'cancer_stage', 'beginning_of_treatment_date', 'family_history', 'smoking_status', 'treatment_type', 'end_treatment_date']
+[2025-06-19T10:30:59.129+0000] {logging_mixin.py:188} INFO - One-hot encoding column 'gender' with 2 unique values
+[2025-06-19T10:30:59.131+0000] {logging_mixin.py:188} INFO - Too many unique values (27) for one-hot encoding column 'country'. Considering label encoding instead.
+[2025-06-19T10:30:59.132+0000] {logging_mixin.py:188} INFO - Too many unique values (878) for one-hot encoding column 'diagnosis_date'. Considering label encoding instead.
+[2025-06-19T10:30:59.133+0000] {logging_mixin.py:188} INFO - One-hot encoding column 'cancer_stage' with 4 unique values
+[2025-06-19T10:30:59.135+0000] {logging_mixin.py:188} INFO - Too many unique values (883) for one-hot encoding column 'beginning_of_treatment_date'. Considering label encoding instead.
+[2025-06-19T10:30:59.136+0000] {logging_mixin.py:188} INFO - One-hot encoding column 'family_history' with 2 unique values
+[2025-06-19T10:30:59.137+0000] {logging_mixin.py:188} INFO - One-hot encoding column 'smoking_status' with 4 unique values
+[2025-06-19T10:30:59.139+0000] {logging_mixin.py:188} INFO - One-hot encoding column 'treatment_type' with 4 unique values
+[2025-06-19T10:30:59.141+0000] {logging_mixin.py:188} INFO - Too many unique values (901) for one-hot encoding column 'end_treatment_date'. Considering label encoding instead.
+[2025-06-19T10:30:59.142+0000] {logging_mixin.py:188} INFO - Created derived feature: id_to_age_ratio
+[2025-06-19T10:30:59.146+0000] {logging_mixin.py:188} INFO - Normalized numeric feature: id
+[2025-06-19T10:30:59.148+0000] {logging_mixin.py:188} INFO - Normalized numeric feature: age
+[2025-06-19T10:30:59.150+0000] {logging_mixin.py:188} INFO - Normalized numeric feature: bmi
+[2025-06-19T10:30:59.152+0000] {logging_mixin.py:188} INFO - Normalized numeric feature: cholesterol_level
+[2025-06-19T10:30:59.154+0000] {logging_mixin.py:188} INFO - Normalized numeric feature: hypertension
+[2025-06-19T10:30:59.156+0000] {logging_mixin.py:188} INFO - Normalized numeric feature: asthma
+[2025-06-19T10:30:59.158+0000] {logging_mixin.py:188} INFO - Normalized numeric feature: cirrhosis
+[2025-06-19T10:30:59.161+0000] {logging_mixin.py:188} INFO - Normalized numeric feature: other_cancer
+[2025-06-19T10:30:59.163+0000] {logging_mixin.py:188} INFO - Normalized numeric feature: survived
+[2025-06-19T10:30:59.166+0000] {logging_mixin.py:188} INFO - Applied log transformation to skewed feature 'hypertension' (skewness: -1.14)
+[2025-06-19T10:30:59.167+0000] {logging_mixin.py:188} INFO - Applied log transformation to skewed feature 'cirrhosis' (skewness: 1.16)
+[2025-06-19T10:30:59.167+0000] {logging_mixin.py:188} INFO - Data transformation completed. Final shape: (1000, 23)
+[2025-06-19T10:30:59.172+0000] {logging_mixin.py:188} INFO - Stored DataFrame with shape (1000, 23) at key 'lung_cancer:transformed_data'
+[2025-06-19T10:30:59.172+0000] {logging_mixin.py:188} INFO - Stored dictionary at key 'lung_cancer:transformed_data:meta'
+[2025-06-19T10:30:59.274+0000] {python.py:202} INFO - Done. Returned value was: Data transformation completed
+[2025-06-19T10:30:59.337+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=lung_cancer_ml_pipeline, task_id=transform_data_task, execution_date=20250619T102548, start_date=20250619T103058, end_date=20250619T103059
+[2025-06-19T10:30:59.406+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-06-19T10:30:59.427+0000] {taskinstance.py:3309} INFO - 1 downstream tasks scheduled from follow-on schedule check

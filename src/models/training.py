@@ -3,9 +3,9 @@ import numpy as np
 import yaml
 from typing import Dict, Any, List, Tuple, Optional
 from sklearn.model_selection import train_test_split, GridSearchCV
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier, RandomForestRegressor, GradientBoostingRegressor
+from sklearn.linear_model import LogisticRegression, LinearRegression, Ridge, Lasso
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, mean_squared_error, r2_score, mean_absolute_error
 import joblib
 import os
 import sys
@@ -83,15 +83,34 @@ def train_model(X_train: pd.DataFrame,
     algorithm = model_config['algorithm']
     hyperparameters = model_config['hyperparameters']
     
-    # Initialize model based on algorithm
-    if algorithm == "RandomForestClassifier":
-        model = RandomForestClassifier(**hyperparameters)
-    elif algorithm == "GradientBoostingClassifier":
-        model = GradientBoostingClassifier(**hyperparameters)
-    elif algorithm == "LogisticRegression":
-        model = LogisticRegression(**hyperparameters)
+    # Determine if this is a classification or regression task
+    is_classification = len(y_train.unique()) < 10  # Usually a heuristic: if fewer than 10 unique values, likely classification
+    if not is_classification:
+        print("Target variable appears to be continuous. Using regression model instead of classifier.")
+        # Switch to regression model
+        if algorithm == "RandomForestClassifier":
+            algorithm = "RandomForestRegressor"
+            model = RandomForestRegressor(**hyperparameters)
+        elif algorithm == "GradientBoostingClassifier":
+            algorithm = "GradientBoostingRegressor"
+            model = GradientBoostingRegressor(**hyperparameters)
+        elif algorithm == "LogisticRegression":
+            algorithm = "Ridge"
+            model = Ridge(**hyperparameters)
+        else:
+            # Default to RandomForestRegressor
+            algorithm = "RandomForestRegressor"
+            model = RandomForestRegressor(**hyperparameters)
     else:
-        raise ValueError(f"Unsupported algorithm: {algorithm}")
+        # Initialize classification model based on algorithm
+        if algorithm == "RandomForestClassifier":
+            model = RandomForestClassifier(**hyperparameters)
+        elif algorithm == "GradientBoostingClassifier":
+            model = GradientBoostingClassifier(**hyperparameters)
+        elif algorithm == "LogisticRegression":
+            model = LogisticRegression(**hyperparameters)
+        else:
+            raise ValueError(f"Unsupported algorithm: {algorithm}")
     
     # Train model
     print(f"Training {algorithm} model...")
@@ -121,7 +140,8 @@ def train_model(X_train: pd.DataFrame,
         "feature_importances": feature_importances,
         "training_samples": X_train.shape[0],
         "features": list(X_train.columns),
-        "timestamp": pd.Timestamp.now().isoformat()
+        "timestamp": pd.Timestamp.now().isoformat(),
+        "is_classification": is_classification
     }
     
     # Save model
@@ -166,41 +186,83 @@ def grid_search_cv(X_train: pd.DataFrame,
     model_config = config['model']
     algorithm = model_config['algorithm']
     
-    # Define parameter grid based on algorithm
-    if algorithm == "RandomForestClassifier":
-        model = RandomForestClassifier()
-        param_grid = {
-            'n_estimators': [50, 100, 200],
-            'max_depth': [None, 10, 20, 30],
-            'min_samples_split': [2, 5, 10],
-            'min_samples_leaf': [1, 2, 4],
-            'random_state': [42]
-        }
-    elif algorithm == "GradientBoostingClassifier":
-        model = GradientBoostingClassifier()
-        param_grid = {
-            'n_estimators': [50, 100, 200],
-            'learning_rate': [0.01, 0.1, 0.2],
-            'max_depth': [3, 5, 7],
-            'random_state': [42]
-        }
-    elif algorithm == "LogisticRegression":
-        model = LogisticRegression()
-        param_grid = {
-            'C': [0.01, 0.1, 1.0, 10.0],
-            'solver': ['liblinear', 'lbfgs'],
-            'penalty': ['l1', 'l2'],
-            'random_state': [42]
-        }
-    else:
-        raise ValueError(f"Unsupported algorithm: {algorithm}")
+    # Determine if this is a classification or regression task
+    is_classification = len(y_train.unique()) < 10  # Usually a heuristic: if fewer than 10 unique values, likely classification
     
-    # Create grid search
+    if not is_classification:
+        print("Target variable appears to be continuous. Using regression model for grid search.")
+        # Define parameter grid for regression models
+        if algorithm == "RandomForestClassifier" or algorithm == "RandomForestRegressor":
+            model = RandomForestRegressor()
+            algorithm = "RandomForestRegressor"
+            param_grid = {
+                'n_estimators': [50, 100, 200],
+                'max_depth': [None, 10, 20, 30],
+                'min_samples_split': [2, 5, 10],
+                'min_samples_leaf': [1, 2, 4],
+                'random_state': [42]
+            }
+        elif algorithm == "GradientBoostingClassifier" or algorithm == "GradientBoostingRegressor":
+            model = GradientBoostingRegressor()
+            algorithm = "GradientBoostingRegressor"
+            param_grid = {
+                'n_estimators': [50, 100, 200],
+                'learning_rate': [0.01, 0.1, 0.2],
+                'max_depth': [3, 5, 7],
+                'random_state': [42]
+            }
+        elif algorithm == "LogisticRegression" or algorithm == "Ridge":
+            model = Ridge()
+            algorithm = "Ridge"
+            param_grid = {
+                'alpha': [0.01, 0.1, 1.0, 10.0],
+                'solver': ['auto', 'svd', 'cholesky', 'lsqr'],
+                'random_state': [42]
+            }
+        else:
+            model = RandomForestRegressor()
+            algorithm = "RandomForestRegressor"
+            param_grid = {
+                'n_estimators': [50, 100, 200],
+                'max_depth': [None, 10, 20, 30],
+                'random_state': [42]
+            }
+    else:
+        # Define parameter grid for classification models
+        if algorithm == "RandomForestClassifier":
+            model = RandomForestClassifier()
+            param_grid = {
+                'n_estimators': [50, 100, 200],
+                'max_depth': [None, 10, 20, 30],
+                'min_samples_split': [2, 5, 10],
+                'min_samples_leaf': [1, 2, 4],
+                'random_state': [42]
+            }
+        elif algorithm == "GradientBoostingClassifier":
+            model = GradientBoostingClassifier()
+            param_grid = {
+                'n_estimators': [50, 100, 200],
+                'learning_rate': [0.01, 0.1, 0.2],
+                'max_depth': [3, 5, 7],
+                'random_state': [42]
+            }
+        elif algorithm == "LogisticRegression":
+            model = LogisticRegression()
+            param_grid = {
+                'C': [0.01, 0.1, 1.0, 10.0],
+                'solver': ['liblinear', 'lbfgs'],
+                'penalty': ['l1', 'l2'],
+                'random_state': [42]
+            }
+        else:
+            raise ValueError(f"Unsupported algorithm: {algorithm}")
+    
+    # Create grid search with appropriate scoring
     grid_search = GridSearchCV(
         estimator=model,
         param_grid=param_grid,
         cv=5,
-        scoring='f1',
+        scoring='r2' if not is_classification else 'f1',
         n_jobs=-1,
         verbose=1
     )
@@ -225,7 +287,8 @@ def grid_search_cv(X_train: pd.DataFrame,
                 cv_results['params'],
                 cv_results['mean_test_score']
             )
-        }
+        },
+        "is_classification": is_classification
     }
     
     # Save best model
