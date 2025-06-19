@@ -1,28 +1,29 @@
 data_processing:
   features:
     categorical:
-    - gender
-    - country
-    - diagnosis_date
-    - cancer_stage
-    - beginning_of_treatment_date
-    - family_history
-    - smoking_status
-    - treatment_type
-    - end_treatment_date
+      - gender
+      - country
+      - diagnosis_date
+      - cancer_stage
+      - beginning_of_treatment_date
+      - family_history
+      - smoking_status
+      - treatment_type
+      - end_treatment_date
     numerical:
-    - id
-    - age
-    - bmi
-    - cholesterol_level
-    - hypertension
-    - asthma
-    - cirrhosis
-    - other_cancer
+      - id
+      - age
+      - bmi
+      - cholesterol_level
+      - hypertension
+      - asthma
+      - cirrhosis
+      - other_cancer
   random_state: 42
   target: survived
   test_size: 0.2
 mlflow:
+  artifact_path: /opt/airflow/mlflow
   experiment_name: lung_cancer_mortality_prediction
   model_name: lung_cancer_model
   register_model: true
@@ -30,11 +31,11 @@ mlflow:
 model:
   algorithm: RandomForestClassifier
   evaluation_metrics:
-  - accuracy
-  - precision
-  - recall
-  - f1
-  - roc_auc
+    - accuracy
+    - precision
+    - recall
+    - f1
+    - roc_auc
   hyperparameters:
     max_depth: 10
     n_estimators: 100

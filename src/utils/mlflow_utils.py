@@ -19,8 +19,17 @@ class MLFlowTracker:
         
         self.mlflow_config = self.config['mlflow']
         
+        # Create artifacts directory with proper permissions if it doesn't exist
+        artifacts_dir = "/opt/airflow/mlflow"
+        os.makedirs(artifacts_dir, exist_ok=True)
+        
         # Set tracking URI
         mlflow.set_tracking_uri(self.mlflow_config['tracking_uri'])
+        
+        # Set default artifact location
+        mlflow.tracking.utils._TRACKING_URI_ENV_VAR = "MLFLOW_TRACKING_URI"
+        os.environ["MLFLOW_TRACKING_URI"] = self.mlflow_config['tracking_uri']
+        os.environ["MLFLOW_ARTIFACT_ROOT"] = artifacts_dir
         
         # Set experiment
         self.experiment_name = self.mlflow_config['experiment_name']
