@@ -30,65 +30,94 @@ Sovit_Proj/
 │   └── config.yaml
 ├── docker-compose.yml
 ├── requirements.txt
+├── RUN.md                    # 📖 Complete setup guide
+├── quick_setup.sh           # 🚀 Automated setup script
+├── verify_setup.sh          # ✅ Health check script
 ├── README.md
 ├── setup.sh
 ├── start_project.sh
 └── explore_dataset.py
 ```
 
-## Getting Started
+## 📋 Available Scripts
 
-### Prerequisites
+- **`RUN.md`** - Complete step-by-step setup guide with troubleshooting
+- **`quick_setup.sh`** - Automated setup script (recommended for first-time users)
+- **`verify_setup.sh`** - Health check script to verify all components are working
+- **`setup.sh`** - Manual environment setup
+- **`start_project.sh`** - Legacy start script
 
-- Docker and Docker Compose
-- Python 3.8+
-- Git
+## 🚀 Quick Start
 
-### Installation
+### For New Users (Recommended)
 
-1. Clone the repository:
+If you're cloning this repository for the first time, follow the **comprehensive setup guide**:
 
-   ```bash
-   git clone <repository-url>
-   cd Sovit_Proj
-   ```
+📖 **[READ THE COMPLETE SETUP GUIDE: RUN.md](./RUN.md)**
+
+The RUN.md file contains detailed step-by-step instructions with troubleshooting for all common issues.
+
+### Automated Setup (One-Click)
+
+For experienced users who want automated setup:
+
+```bash
+# Clone the repository
+git clone <your-repository-url>
+cd <repository-name>
+
+# Run the automated setup script
+./quick_setup.sh
+
+# Verify everything is working
+./verify_setup.sh
+```
+
+### Manual Setup
+
+If you prefer manual control over the setup process:
+
+```bash
+git clone <repository-url>
+cd Sovit_Proj
+```
 
 2. The easiest way to set up the project is to use the automated start script:
 
-   ```bash
-   chmod +x start_project.sh
-   ./start_project.sh
-   ```
+```bash
+chmod +x start_project.sh
+./start_project.sh
+```
 
-   This script will:
+This script will:
 
-   - Check for required dependencies
-   - Create a Python virtual environment
-   - Install all dependencies
-   - Start Docker containers for Airflow, MLflow, and Redis
+- Check for required dependencies
+- Create a Python virtual environment
+- Install all dependencies
+- Start Docker containers for Airflow, MLflow, and Redis
 
 3. Alternatively, you can set up the environment manually:
 
-   ```bash
-   chmod +x setup.sh
-   ./setup.sh
-   source venv/bin/activate
+```bash
+chmod +x setup.sh
+./setup.sh
+source venv/bin/activate
 
-   # Start Docker containers
-   docker-compose up -d
-   ```
+# Start Docker containers
+docker-compose up -d
+```
 
 4. Explore the dataset and update configuration:
 
-   ```bash
-   # Activate the virtual environment if not already active
-   source venv/bin/activate
+```bash
+# Activate the virtual environment if not already active
+source venv/bin/activate
 
-   # Run the dataset exploration script
-   ./explore_dataset.py
-   ```
+# Run the dataset exploration script
+./explore_dataset.py
+```
 
-   This will analyze the dataset and update the configuration in `config/config.yaml`.
+This will analyze the dataset and update the configuration in `config/config.yaml`.
 
 ## Pipeline Workflow
 
@@ -132,28 +161,43 @@ All configuration parameters are stored in `config/config.yaml`. You can modify 
 
 ## Troubleshooting
 
-### Installation Issues
+⚠️ **For detailed troubleshooting, please refer to [RUN.md](./RUN.md)** which contains comprehensive solutions for all common issues.
 
-1. **Package installation failures**:
-   - Make sure your Python version is compatible (Python 3.8+)
-   - Try running `pip install --upgrade pip setuptools wheel` before installing other packages
-2. **Docker issues**:
-   - Ensure Docker and Docker Compose are installed and running
-   - Check Docker logs with `docker-compose logs`
-3. **Permission issues**:
-   - Make sure the script files are executable: `chmod +x *.sh *.py`
+### Quick Fixes
 
-### Runtime Issues
+1. **Verify your setup**:
 
-1. **Airflow connection issues**:
-   - Check if all containers are running: `docker-compose ps`
-   - Verify network configuration in `docker-compose.yml`
-2. **MLflow tracking errors**:
-   - Ensure MLflow container is running
-   - Check MLflow logs: `docker-compose logs mlflow`
-3. **Redis connection errors**:
-   - Verify Redis container is running
-   - Check Redis logs: `docker-compose logs redis`
+```bash
+./verify_setup.sh
+```
+
+2. **Check service status**:
+
+```bash
+docker-compose ps
+```
+
+3. **View service logs**:
+
+```bash
+docker-compose logs <service-name>
+```
+
+4. **Restart services**:
+
+```bash
+docker-compose restart
+```
+
+### Common Issues
+
+- **Docker permission denied**: Add user to docker group and restart terminal
+- **Port conflicts**: Check if ports 8080, 5000, 6379, 5432 are available
+- **Python package errors**: Reinstall packages in Airflow containers
+- **DAG not visible**: Wait 2-3 minutes for DAG registration
+- **MLflow permission errors**: Pipeline includes fallback to local model storage
+
+📖 **For complete troubleshooting guide, see [RUN.md](./RUN.md)**
 
 ## Stopping the Pipeline
 
@@ -174,3 +218,46 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Redis
 - Scikit-learn
 - Pandas/NumPy
+
+## 🎯 Expected Results
+
+After successful setup, you should have:
+
+### ✅ Running Services
+
+- **Airflow Web UI**: http://localhost:8080 (admin/admin)
+- **MLflow UI**: http://localhost:5000
+- **Redis**: Running on port 6379
+- **PostgreSQL**: Running on port 5432
+
+### ✅ ML Pipeline Components
+
+The pipeline consists of 8 sequential tasks:
+
+1. **Data Ingestion** - Load raw data from CSV
+2. **Data Cleaning** - Preprocess and clean data
+3. **Data Transformation** - Apply feature transformations
+4. **Data Validation** - Quality checks and validation
+5. **Feature Engineering** - Create advanced features
+6. **Model Training** - Train RandomForestRegressor
+7. **Model Evaluation** - Calculate performance metrics
+8. **Model Registration** - Save model artifacts
+
+### ✅ Sample Output
+
+A successful pipeline run produces:
+
+- **Model artifacts** saved in `/opt/airflow/models/`
+- **Feature importance analysis** (top feature: `id_to_age_ratio` with 99.5% importance)
+- **Performance metrics** in MLflow
+- **Training metadata** with hyperparameters and results
+
+### 🚀 Running Your First Pipeline
+
+1. Open Airflow UI at http://localhost:8080
+2. Login with username: `admin`, password: `admin`
+3. Find the `lung_cancer_ml_pipeline` DAG
+4. Toggle it ON (unpause)
+5. Click the "Play" button to trigger execution
+6. Monitor progress in the Graph View
+7. Check results in MLflow UI at http://localhost:5000
