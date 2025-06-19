@@ -146,3 +146,8 @@ volumes:
   postgres-db-volume:
   redis-data:
   mlflow-artifacts:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${PWD}/mlflow_artifacts

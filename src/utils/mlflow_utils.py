@@ -27,8 +27,11 @@ class MLFlowTracker:
         # Ensure the artifact directory exists with proper permissions
         os.makedirs(artifact_uri, exist_ok=True)
         
-        # Set tracking URI
+        # Set tracking URI and artifact location
         mlflow.set_tracking_uri(tracking_uri)
+        
+        # Set the artifact location directly in MLflow
+        os.environ["MLFLOW_ARTIFACTS_DESTINATION"] = artifact_uri
         
         # Set experiment
         self.experiment_name = self.mlflow_config['experiment_name']
