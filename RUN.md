@@ -231,7 +231,41 @@ docker exec -it $(docker-compose ps -q airflow-worker) cat /opt/airflow/models/r
 
 ## 🔧 Troubleshooting
 
+### 🚀 Quick Fix Tool
+
+If you encounter any issues after setup, use the interactive fix tool:
+
+```bash
+./fix_issues.sh
+```
+
+This tool can help with:
+
+- Python package import issues
+- Service restart problems
+- DAG registration issues
+- File permission problems
+- Complete health checks
+
 ### Common Issues and Solutions
+
+#### 0. Python Package Import Issues (Most Common)
+
+**Symptoms**: `verify_setup.sh` shows "Missing packages" for scheduler container
+
+**Quick Fix**:
+
+```bash
+./fix_issues.sh
+# Select option 1: Fix Python package import issues
+```
+
+**Manual Fix**:
+
+```bash
+# Reinstall packages in scheduler container
+docker exec $(docker-compose ps -q airflow-scheduler) pip3 install mlflow scikit-learn redis pandas numpy seaborn matplotlib joblib --force-reinstall
+```
 
 #### 1. Docker Permission Denied
 

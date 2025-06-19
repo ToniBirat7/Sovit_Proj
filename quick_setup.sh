@@ -94,6 +94,19 @@ for container in "${containers[@]}"; do
     fi
 done
 
+# Step 4.5: Fix scheduler packages if needed (common issue)
+print_status "Ensuring all packages are properly installed..."
+for container in "${containers[@]}"; do
+    container_id=$(docker-compose ps -q $container)
+    if [ -n "$container_id" ]; then
+        # Check if packages are importable
+        if ! docker exec $container_id python3 -c "import mlflow, sklearn, redis, pandas, numpy" 2>/dev/null; then
+            print_warning "Reinstalling packages in $container due to import issues..."
+            docker exec $container_id pip3 install $packages --force-reinstall --no-deps 2>/dev/null
+        fi
+    fi
+done
+
 # Step 5: Create Airflow admin user
 print_status "Creating Airflow admin user..."
 webserver_id=$(docker-compose ps -q airflow-webserver)

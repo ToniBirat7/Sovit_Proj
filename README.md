@@ -33,6 +33,7 @@ Sovit_Proj/
 ├── RUN.md                    # 📖 Complete setup guide
 ├── quick_setup.sh           # 🚀 Automated setup script
 ├── verify_setup.sh          # ✅ Health check script
+├── fix_issues.sh            # 🔧 Quick troubleshooting tool
 ├── README.md
 ├── setup.sh
 ├── start_project.sh
@@ -44,6 +45,7 @@ Sovit_Proj/
 - **`RUN.md`** - Complete step-by-step setup guide with troubleshooting
 - **`quick_setup.sh`** - Automated setup script (recommended for first-time users)
 - **`verify_setup.sh`** - Health check script to verify all components are working
+- **`fix_issues.sh`** - Interactive troubleshooting tool for common issues
 - **`setup.sh`** - Manual environment setup
 - **`start_project.sh`** - Legacy start script
 
@@ -165,13 +167,19 @@ All configuration parameters are stored in `config/config.yaml`. You can modify 
 
 ### Quick Fixes
 
-1. **Verify your setup**:
+1. **Run interactive troubleshooting tool**:
 
-```bash
-./verify_setup.sh
-```
+   ```bash
+   ./fix_issues.sh
+   ```
 
-2. **Check service status**:
+2. **Verify your setup**:
+
+   ```bash
+   ./verify_setup.sh
+   ```
+
+3. **Check service status**:
 
 ```bash
 docker-compose ps
