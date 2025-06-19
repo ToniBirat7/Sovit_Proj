@@ -1,0 +1,2 @@
+[2025-06-19T10:56:49.584+0000] {taskinstance.py:1969} INFO - Dependencies not met for <TaskInstance: lung_cancer_ml_pipeline.train_model_task manual__2025-06-19T16:41:41+05:45 [up_for_retry]>, dependency 'Not In Retry Period' FAILED: Task is not ready for retry yet but will be retried automatically. Current date is 2025-06-19T10:56:49.584091+00:00 and task will be retried at 2025-06-19T11:01:49.429872+00:00.
+[2025-06-19T10:56:49.620+0000] {local_task_job_runner.py:160} INFO - Task is not able to be run

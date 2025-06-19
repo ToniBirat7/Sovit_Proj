@@ -19,17 +19,16 @@ class MLFlowTracker:
         
         self.mlflow_config = self.config['mlflow']
         
-        # Create artifacts directory with proper permissions if it doesn't exist
-        artifacts_dir = "/opt/airflow/mlflow"
-        os.makedirs(artifacts_dir, exist_ok=True)
+        # Use environment variables for MLflow configuration
+        # These should be set in docker-compose.yml
+        tracking_uri = os.environ.get("MLFLOW_TRACKING_URI", self.mlflow_config['tracking_uri'])
+        artifact_uri = os.environ.get("MLFLOW_ARTIFACT_ROOT", "/opt/airflow/mlflow_artifacts")
+        
+        # Ensure the artifact directory exists with proper permissions
+        os.makedirs(artifact_uri, exist_ok=True)
         
         # Set tracking URI
-        mlflow.set_tracking_uri(self.mlflow_config['tracking_uri'])
-        
-        # Set default artifact location
-        mlflow.tracking.utils._TRACKING_URI_ENV_VAR = "MLFLOW_TRACKING_URI"
-        os.environ["MLFLOW_TRACKING_URI"] = self.mlflow_config['tracking_uri']
-        os.environ["MLFLOW_ARTIFACT_ROOT"] = artifacts_dir
+        mlflow.set_tracking_uri(tracking_uri)
         
         # Set experiment
         self.experiment_name = self.mlflow_config['experiment_name']

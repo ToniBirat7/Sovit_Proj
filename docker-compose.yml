@@ -38,6 +38,8 @@ services:
       - AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=true
       - AIRFLOW__CORE__LOAD_EXAMPLES=false
       - AIRFLOW__API__AUTH_BACKENDS=airflow.api.auth.backend.basic_auth
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+      - MLFLOW_ARTIFACT_ROOT=/opt/airflow/mlflow_artifacts
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/plugins:/opt/airflow/plugins
@@ -45,6 +47,7 @@ services:
       - ./Dataset:/opt/airflow/data
       - ./src:/opt/airflow/src
       - ./config:/opt/airflow/config
+      - mlflow-artifacts:/opt/airflow/mlflow_artifacts
     ports:
       - "8080:8080"
     command: webserver
@@ -67,6 +70,8 @@ services:
       - AIRFLOW__CORE__FERNET_KEY=''
       - AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=true
       - AIRFLOW__CORE__LOAD_EXAMPLES=false
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+      - MLFLOW_ARTIFACT_ROOT=/opt/airflow/mlflow_artifacts
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/plugins:/opt/airflow/plugins
@@ -74,6 +79,7 @@ services:
       - ./Dataset:/opt/airflow/data
       - ./src:/opt/airflow/src
       - ./config:/opt/airflow/config
+      - mlflow-artifacts:/opt/airflow/mlflow_artifacts
     command: scheduler
     restart: always
 
@@ -87,6 +93,8 @@ services:
       - AIRFLOW__CELERY__RESULT_BACKEND=db+postgresql://airflow:airflow@postgres/airflow
       - AIRFLOW__CELERY__BROKER_URL=redis://redis:6379/0
       - AIRFLOW__CORE__FERNET_KEY=''
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+      - MLFLOW_ARTIFACT_ROOT=/opt/airflow/mlflow_artifacts
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/plugins:/opt/airflow/plugins
@@ -94,6 +102,7 @@ services:
       - ./Dataset:/opt/airflow/data
       - ./src:/opt/airflow/src
       - ./config:/opt/airflow/config
+      - mlflow-artifacts:/opt/airflow/mlflow_artifacts
     command: celery worker
     restart: always
 
@@ -129,9 +138,11 @@ services:
       - MLFLOW_DEFAULT_ARTIFACT_ROOT=/mlflow/artifacts
     volumes:
       - ./mlflow:/mlflow
+      - mlflow-artifacts:/mlflow/artifacts
     command: mlflow server --host 0.0.0.0 --backend-store-uri sqlite:///mlflow/mlflow.db --default-artifact-root /mlflow/artifacts
     restart: always
 
 volumes:
   postgres-db-volume:
   redis-data:
+  mlflow-artifacts:

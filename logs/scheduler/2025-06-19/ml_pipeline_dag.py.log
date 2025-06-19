@@ -909,3 +909,266 @@ ModuleNotFoundError: No module named 'seaborn'
 [2025-06-19T10:41:25.256+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:41:25.255+0000] {dag.py:3047} INFO - Sync 1 DAGs
 [2025-06-19T10:41:25.271+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:41:25.271+0000] {dag.py:3834} INFO - Setting next_dagrun for lung_cancer_ml_pipeline to 2025-06-19 00:00:00+00:00, run_after=2025-06-20 00:00:00+00:00
 [2025-06-19T10:41:25.326+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 1.282 seconds
+[2025-06-19T10:41:55.474+0000] {processor.py:161} INFO - Started process (PID=926) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:41:55.475+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:41:55.476+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:41:55.476+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:41:56.682+0000] {processor.py:840} INFO - DAG(s) 'lung_cancer_ml_pipeline' retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:41:56.701+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:41:56.701+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-06-19T10:41:56.715+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:41:56.715+0000] {dag.py:3834} INFO - Setting next_dagrun for lung_cancer_ml_pipeline to 2025-06-19 00:00:00+00:00, run_after=2025-06-20 00:00:00+00:00
+[2025-06-19T10:41:56.770+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 1.299 seconds
+[2025-06-19T10:42:26.920+0000] {processor.py:161} INFO - Started process (PID=946) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:42:26.921+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:42:26.922+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:42:26.922+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:42:28.215+0000] {processor.py:840} INFO - DAG(s) 'lung_cancer_ml_pipeline' retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:42:28.234+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:42:28.233+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-06-19T10:42:28.252+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:42:28.252+0000] {dag.py:3834} INFO - Setting next_dagrun for lung_cancer_ml_pipeline to 2025-06-19 00:00:00+00:00, run_after=2025-06-20 00:00:00+00:00
+[2025-06-19T10:42:28.306+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 1.389 seconds
+[2025-06-19T10:42:58.455+0000] {processor.py:161} INFO - Started process (PID=964) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:42:58.456+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:42:58.458+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:42:58.458+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:42:59.883+0000] {processor.py:840} INFO - DAG(s) 'lung_cancer_ml_pipeline' retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:42:59.904+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:42:59.903+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-06-19T10:42:59.920+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:42:59.920+0000] {dag.py:3834} INFO - Setting next_dagrun for lung_cancer_ml_pipeline to 2025-06-19 00:00:00+00:00, run_after=2025-06-20 00:00:00+00:00
+[2025-06-19T10:42:59.985+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 1.534 seconds
+[2025-06-19T10:43:30.141+0000] {processor.py:161} INFO - Started process (PID=977) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:43:30.142+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:43:30.143+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:43:30.143+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:43:31.478+0000] {processor.py:840} INFO - DAG(s) 'lung_cancer_ml_pipeline' retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:43:31.502+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:43:31.502+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-06-19T10:43:31.518+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:43:31.518+0000] {dag.py:3834} INFO - Setting next_dagrun for lung_cancer_ml_pipeline to 2025-06-19 00:00:00+00:00, run_after=2025-06-20 00:00:00+00:00
+[2025-06-19T10:43:31.575+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 1.437 seconds
+[2025-06-19T10:44:01.706+0000] {processor.py:161} INFO - Started process (PID=990) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:44:01.707+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:44:01.709+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:44:01.708+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:44:03.020+0000] {processor.py:840} INFO - DAG(s) 'lung_cancer_ml_pipeline' retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:44:03.040+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:44:03.039+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-06-19T10:44:03.058+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:44:03.058+0000] {dag.py:3834} INFO - Setting next_dagrun for lung_cancer_ml_pipeline to 2025-06-19 00:00:00+00:00, run_after=2025-06-20 00:00:00+00:00
+[2025-06-19T10:44:03.117+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 1.414 seconds
+[2025-06-19T10:44:33.268+0000] {processor.py:161} INFO - Started process (PID=1003) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:44:33.269+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:44:33.270+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:44:33.270+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:44:34.755+0000] {processor.py:840} INFO - DAG(s) 'lung_cancer_ml_pipeline' retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:44:34.783+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:44:34.782+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-06-19T10:44:34.805+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:44:34.805+0000] {dag.py:3834} INFO - Setting next_dagrun for lung_cancer_ml_pipeline to 2025-06-19 00:00:00+00:00, run_after=2025-06-20 00:00:00+00:00
+[2025-06-19T10:44:34.874+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 1.609 seconds
+[2025-06-19T10:45:05.000+0000] {processor.py:161} INFO - Started process (PID=1016) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:45:05.001+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:45:05.002+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:45:05.002+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:45:06.177+0000] {processor.py:840} INFO - DAG(s) 'lung_cancer_ml_pipeline' retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:45:06.195+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:45:06.194+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-06-19T10:45:06.211+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:45:06.211+0000] {dag.py:3834} INFO - Setting next_dagrun for lung_cancer_ml_pipeline to 2025-06-19 00:00:00+00:00, run_after=2025-06-20 00:00:00+00:00
+[2025-06-19T10:45:06.268+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 1.270 seconds
+[2025-06-19T10:45:36.409+0000] {processor.py:161} INFO - Started process (PID=1035) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:45:36.409+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:45:36.411+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:45:36.411+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:45:37.725+0000] {processor.py:840} INFO - DAG(s) 'lung_cancer_ml_pipeline' retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:45:37.753+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:45:37.752+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-06-19T10:45:37.779+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:45:37.778+0000] {dag.py:3834} INFO - Setting next_dagrun for lung_cancer_ml_pipeline to 2025-06-19 00:00:00+00:00, run_after=2025-06-20 00:00:00+00:00
+[2025-06-19T10:45:37.850+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 1.444 seconds
+[2025-06-19T10:46:08.001+0000] {processor.py:161} INFO - Started process (PID=1048) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:46:08.002+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:46:08.003+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:46:08.003+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:46:09.246+0000] {processor.py:840} INFO - DAG(s) 'lung_cancer_ml_pipeline' retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:46:09.266+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:46:09.265+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-06-19T10:46:09.283+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:46:09.282+0000] {dag.py:3834} INFO - Setting next_dagrun for lung_cancer_ml_pipeline to 2025-06-19 00:00:00+00:00, run_after=2025-06-20 00:00:00+00:00
+[2025-06-19T10:46:09.361+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 1.363 seconds
+[2025-06-19T10:46:39.515+0000] {processor.py:161} INFO - Started process (PID=1061) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:46:39.516+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:46:39.518+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:46:39.517+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:46:40.764+0000] {processor.py:840} INFO - DAG(s) 'lung_cancer_ml_pipeline' retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:46:40.783+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:46:40.782+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-06-19T10:46:40.798+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:46:40.798+0000] {dag.py:3834} INFO - Setting next_dagrun for lung_cancer_ml_pipeline to 2025-06-19 00:00:00+00:00, run_after=2025-06-20 00:00:00+00:00
+[2025-06-19T10:46:40.848+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 1.335 seconds
+[2025-06-19T10:47:10.990+0000] {processor.py:161} INFO - Started process (PID=1074) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:47:10.991+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:47:10.993+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:47:10.993+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:47:12.255+0000] {processor.py:840} INFO - DAG(s) 'lung_cancer_ml_pipeline' retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:47:12.274+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:47:12.273+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-06-19T10:47:12.289+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:47:12.289+0000] {dag.py:3834} INFO - Setting next_dagrun for lung_cancer_ml_pipeline to 2025-06-19 00:00:00+00:00, run_after=2025-06-20 00:00:00+00:00
+[2025-06-19T10:47:12.342+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 1.355 seconds
+[2025-06-19T10:47:42.484+0000] {processor.py:161} INFO - Started process (PID=1087) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:47:42.485+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:47:42.486+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:47:42.486+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:47:43.703+0000] {processor.py:840} INFO - DAG(s) 'lung_cancer_ml_pipeline' retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:47:43.721+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:47:43.721+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-06-19T10:47:43.739+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:47:43.739+0000] {dag.py:3834} INFO - Setting next_dagrun for lung_cancer_ml_pipeline to 2025-06-19 00:00:00+00:00, run_after=2025-06-20 00:00:00+00:00
+[2025-06-19T10:47:43.828+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 1.346 seconds
+[2025-06-19T10:48:13.963+0000] {processor.py:161} INFO - Started process (PID=1100) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:48:13.964+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:48:13.965+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:48:13.965+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:48:15.213+0000] {processor.py:840} INFO - DAG(s) 'lung_cancer_ml_pipeline' retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:48:15.234+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:48:15.234+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-06-19T10:48:15.250+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:48:15.250+0000] {dag.py:3834} INFO - Setting next_dagrun for lung_cancer_ml_pipeline to 2025-06-19 00:00:00+00:00, run_after=2025-06-20 00:00:00+00:00
+[2025-06-19T10:48:15.288+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 1.327 seconds
+[2025-06-19T10:49:38.018+0000] {processor.py:161} INFO - Started process (PID=36) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:49:38.019+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:49:38.020+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:49:38.020+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:49:53.202+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:49:53.201+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/ml_pipeline_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ml_pipeline_dag.py", line 9, in <module>
+    import mlflow
+ModuleNotFoundError: No module named 'mlflow'
+[2025-06-19T10:49:53.203+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:49:53.318+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 15.303 seconds
+[2025-06-19T10:50:23.450+0000] {processor.py:161} INFO - Started process (PID=38) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:50:23.450+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:50:23.452+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:50:23.452+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:50:23.647+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:50:23.646+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/ml_pipeline_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ml_pipeline_dag.py", line 9, in <module>
+    import mlflow
+ModuleNotFoundError: No module named 'mlflow'
+[2025-06-19T10:50:23.647+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:50:23.761+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 0.314 seconds
+[2025-06-19T10:50:53.892+0000] {processor.py:161} INFO - Started process (PID=40) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:50:53.893+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:50:53.894+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:50:53.893+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:50:54.122+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:50:54.121+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/ml_pipeline_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ml_pipeline_dag.py", line 9, in <module>
+    import mlflow
+ModuleNotFoundError: No module named 'mlflow'
+[2025-06-19T10:50:54.123+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:50:54.215+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 0.325 seconds
+[2025-06-19T10:51:24.344+0000] {processor.py:161} INFO - Started process (PID=42) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:51:24.345+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:51:24.345+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:51:24.345+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:51:24.534+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:51:24.532+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/ml_pipeline_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ml_pipeline_dag.py", line 9, in <module>
+    import mlflow
+ModuleNotFoundError: No module named 'mlflow'
+[2025-06-19T10:51:24.534+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:51:24.586+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 0.245 seconds
+[2025-06-19T10:51:54.725+0000] {processor.py:161} INFO - Started process (PID=69) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:51:54.726+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:51:54.726+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:51:54.726+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:51:54.920+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:51:54.919+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/ml_pipeline_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ml_pipeline_dag.py", line 9, in <module>
+    import mlflow
+ModuleNotFoundError: No module named 'mlflow'
+[2025-06-19T10:51:54.921+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:51:54.996+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 0.274 seconds
+[2025-06-19T10:52:25.124+0000] {processor.py:161} INFO - Started process (PID=87) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:52:25.125+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:52:25.126+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:52:25.125+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:52:27.966+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:52:27.966+0000] {font_manager.py:1547} INFO - generated new fontManager
+[2025-06-19T10:52:28.128+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:52:28.127+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/ml_pipeline_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ml_pipeline_dag.py", line 22, in <module>
+    from src.models.evaluation import evaluate_model
+  File "/opt/airflow/src/models/evaluation.py", line 11, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+[2025-06-19T10:52:28.129+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:52:28.184+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 3.062 seconds
+[2025-06-19T10:52:58.273+0000] {processor.py:161} INFO - Started process (PID=102) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:52:58.274+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:52:58.274+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:52:58.274+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:52:59.452+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:52:59.451+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/ml_pipeline_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ml_pipeline_dag.py", line 22, in <module>
+    from src.models.evaluation import evaluate_model
+  File "/opt/airflow/src/models/evaluation.py", line 11, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+[2025-06-19T10:52:59.453+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:52:59.510+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 1.240 seconds
+[2025-06-19T10:53:29.647+0000] {processor.py:161} INFO - Started process (PID=115) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:53:29.647+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:53:29.648+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:53:29.648+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:53:30.863+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:53:30.861+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/ml_pipeline_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ml_pipeline_dag.py", line 22, in <module>
+    from src.models.evaluation import evaluate_model
+  File "/opt/airflow/src/models/evaluation.py", line 11, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+[2025-06-19T10:53:30.863+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:53:30.913+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 1.269 seconds
+[2025-06-19T10:54:01.059+0000] {processor.py:161} INFO - Started process (PID=128) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:54:01.060+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:54:01.061+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:54:01.061+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:54:02.238+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:54:02.237+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/ml_pipeline_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ml_pipeline_dag.py", line 22, in <module>
+    from src.models.evaluation import evaluate_model
+  File "/opt/airflow/src/models/evaluation.py", line 11, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+[2025-06-19T10:54:02.239+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:54:02.326+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 1.269 seconds
+[2025-06-19T10:54:32.473+0000] {processor.py:161} INFO - Started process (PID=141) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:54:32.473+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:54:32.474+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:54:32.474+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:54:33.722+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:54:33.721+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/ml_pipeline_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ml_pipeline_dag.py", line 22, in <module>
+    from src.models.evaluation import evaluate_model
+  File "/opt/airflow/src/models/evaluation.py", line 11, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+[2025-06-19T10:54:33.723+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:54:33.771+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 1.301 seconds
+[2025-06-19T10:55:03.911+0000] {processor.py:161} INFO - Started process (PID=178) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:55:03.912+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:55:03.912+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:55:03.912+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:55:05.589+0000] {processor.py:840} INFO - DAG(s) 'lung_cancer_ml_pipeline' retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:55:06.591+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:55:06.590+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-06-19T10:55:06.605+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:55:06.605+0000] {dag.py:3834} INFO - Setting next_dagrun for lung_cancer_ml_pipeline to 2025-06-19 00:00:00+00:00, run_after=2025-06-20 00:00:00+00:00
+[2025-06-19T10:55:06.692+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 2.784 seconds
+[2025-06-19T10:55:36.765+0000] {processor.py:161} INFO - Started process (PID=198) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:55:36.766+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:55:36.767+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:55:36.767+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:55:38.057+0000] {processor.py:840} INFO - DAG(s) 'lung_cancer_ml_pipeline' retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:55:38.076+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:55:38.076+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-06-19T10:55:38.094+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:55:38.094+0000] {dag.py:3834} INFO - Setting next_dagrun for lung_cancer_ml_pipeline to 2025-06-19 00:00:00+00:00, run_after=2025-06-20 00:00:00+00:00
+[2025-06-19T10:55:38.804+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 2.042 seconds
+[2025-06-19T10:56:19.887+0000] {processor.py:161} INFO - Started process (PID=70) to work on /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:56:19.888+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag.py for tasks to queue
+[2025-06-19T10:56:19.890+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:56:19.889+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:56:21.248+0000] {processor.py:840} INFO - DAG(s) 'lung_cancer_ml_pipeline' retrieved from /opt/airflow/dags/ml_pipeline_dag.py
+[2025-06-19T10:56:21.279+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:56:21.279+0000] {dag.py:3047} INFO - Sync 1 DAGs
+[2025-06-19T10:56:21.296+0000] {logging_mixin.py:188} INFO - [2025-06-19T10:56:21.296+0000] {dag.py:3834} INFO - Setting next_dagrun for lung_cancer_ml_pipeline to 2025-06-19 00:00:00+00:00, run_after=2025-06-20 00:00:00+00:00
+[2025-06-19T10:56:21.406+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag.py took 1.521 seconds
