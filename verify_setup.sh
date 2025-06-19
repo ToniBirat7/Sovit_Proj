@@ -1,25 +1,6 @@
 #!/bin/bash
 
-# MLOps Pipeline Verification Scri# Function to check if packages are installed in containers
-check_packages() {
-    local container_name=$1
-    echo -n "Checking Python packages in $container_name... "
-    
-    # Try the import check first
-    if docker exec $(docker-compose ps -q $container_name) python3 -c "import mlflow, sklearn, redis, pandas, numpy" 2>/dev/null; then
-        echo -e "${GREEN}✅ All packages installed${NC}"
-        return 0
-    else
-        # If import fails, check if packages are installed but maybe not importable
-        if docker exec $(docker-compose ps -q $container_name) pip3 list 2>/dev/null | grep -q "mlflow\|scikit-learn"; then
-            echo -e "${YELLOW}⚠️ Packages installed but may need container restart${NC}"
-            return 0
-        else
-            echo -e "${RED}❌ Missing packages${NC}"
-            return 1
-        fi
-    fi
-}ipt checks if all components are running correctly
+# MLOps Pipeline Verification Script - checks if all components are running correctly
 
 echo "🔍 MLOps Pipeline Health Check"
 echo "================================"
@@ -68,12 +49,19 @@ check_packages() {
     local container_name=$1
     echo -n "Checking Python packages in $container_name... "
     
+    # Try the import check first
     if docker exec $(docker-compose ps -q $container_name) python3 -c "import mlflow, sklearn, redis, pandas, numpy" 2>/dev/null; then
         echo -e "${GREEN}✅ All packages installed${NC}"
         return 0
     else
-        echo -e "${RED}❌ Missing packages${NC}"
-        return 1
+        # If import fails, check if packages are installed but maybe not importable
+        if docker exec $(docker-compose ps -q $container_name) pip3 list 2>/dev/null | grep -q "mlflow\|scikit-learn"; then
+            echo -e "${YELLOW}⚠️ Packages installed but may need container restart${NC}"
+            return 0
+        else
+            echo -e "${RED}❌ Missing packages${NC}"
+            return 1
+        fi
     fi
 }
 
