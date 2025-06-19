@@ -1,0 +1,56 @@
+data_processing:
+  features:
+    categorical:
+    - gender
+    - country
+    - diagnosis_date
+    - cancer_stage
+    - beginning_of_treatment_date
+    - family_history
+    - smoking_status
+    - treatment_type
+    - end_treatment_date
+    numerical:
+    - id
+    - age
+    - bmi
+    - cholesterol_level
+    - hypertension
+    - asthma
+    - cirrhosis
+    - other_cancer
+  random_state: 42
+  target: survived
+  test_size: 0.2
+mlflow:
+  experiment_name: lung_cancer_mortality_prediction
+  model_name: lung_cancer_model
+  register_model: true
+  tracking_uri: http://mlflow:5000
+model:
+  algorithm: RandomForestClassifier
+  evaluation_metrics:
+  - accuracy
+  - precision
+  - recall
+  - f1
+  - roc_auc
+  hyperparameters:
+    max_depth: 10
+    n_estimators: 100
+    random_state: 42
+paths:
+  models: /opt/airflow/models/
+  processed_data: /opt/airflow/data/processed/
+  raw_data: /opt/airflow/data/lung_cancer_mortality_data_test_v2.csv
+project:
+  description: End-to-end MLOps pipeline for lung cancer mortality prediction
+  name: lung_cancer_mortality_prediction
+redis:
+  db: 0
+  host: redis
+  keys:
+    model_features: lung_cancer:model_features
+    raw_data: lung_cancer:raw_data
+    transformed_data: lung_cancer:transformed_data
+  port: 6379

@@ -1,0 +1,28 @@
+Dataset: lung_cancer_mortality_data_test_v2.csv
+Shape: (1000, 18)
+
+=== Columns ===
+id: int64
+age: float64
+gender: object
+country: object
+diagnosis_date: object
+cancer_stage: object
+beginning_of_treatment_date: object
+family_history: object
+smoking_status: object
+bmi: float64
+cholesterol_level: int64
+hypertension: int64
+asthma: int64
+cirrhosis: int64
+other_cancer: int64
+treatment_type: object
+end_treatment_date: object
+survived: int64
+
+Numeric columns (8): ['id', 'age', 'bmi', 'cholesterol_level', 'hypertension', 'asthma', 'cirrhosis', 'other_cancer']
+Categorical columns (9): ['gender', 'country', 'diagnosis_date', 'cancer_stage', 'beginning_of_treatment_date', 'family_history', 'smoking_status', 'treatment_type', 'end_treatment_date']
+Target column: survived
+
+No missing values found.
